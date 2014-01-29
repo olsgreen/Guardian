@@ -1,0 +1,20 @@
+{
+    "name": "olsgreen/guardian",
+    "description": "A simple base class for self validating models for Laravel 4.x and Eloquent.",
+    "authors": [
+        {
+            "name": "Oliver Green",
+            "email": "green2go@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.x"
+    },
+    "autoload": {
+        "psr-0": {
+            "Olsgreen\\Guardian": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
