@@ -61,7 +61,7 @@ abstract class Guardian extends Model {
 	 * Runs the validation and returns false 
 	 * if validation failed.
 	 * 
-	 * @param  array  $options Usual save options
+	 * @param  array  $options
 	 * @return boolean
 	 */
 	public function save(array $options = array())
@@ -79,6 +79,17 @@ abstract class Guardian extends Model {
 		}
 
 		return $result;
+	}
+
+	/**
+	 * Saves the model without running any validation.
+	 * 
+	 * @param  array  $options
+	 * @return boolean
+	 */
+	public function forceSave(array $options = array())
+	{
+		return parent::save($options);
 	}
 
 }
