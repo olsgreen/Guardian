@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\Validator;
 use Illuminate\Support\MessageBag;
 
-abstract class Guardian extends Eloquent {
+abstract class Guardian extends Model {
 
 	/**
 	 * Validation message holder
