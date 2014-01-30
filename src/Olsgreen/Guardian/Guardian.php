@@ -92,4 +92,30 @@ abstract class Guardian extends Model {
 		return parent::save($options);
 	}
 
+    /**
+    * Fill the model with an array of attributes using 
+    * only the values that are mass assignable.
+    *
+    * @param  array  $attributes
+    * @return \Illuminate\Database\Eloquent\Model
+    */
+	public function fillFillable(array $attributes = array())
+	{
+		// Remove attributes not specified as fillable
+		if (is_array($this->fillable) && count($this->fillable) > 0 && '*' != $this->fillable[0]) {
+				$attributes = array_intersect_key($attributes, array_flip($this->fillable));
+		}
+
+		if (is_array($this->guarded) && count($this->guarded) > 0) {
+			// Remove any attributes specified as guarded
+			if ('*' != $this->guarded[0]) {
+				$attributes = array_diff_key($attributes, array_flip($this->guarded));
+			} elseif ('*' === $this->guarded[0] && is_array($this->fillable) && count($this->fillable) === 0) {
+				$attributes = array(); // Remove all attributes if fillable isn't defined and guarded is specified as all
+			}
+		}
+		
+		return $this->fill($attributes);
+	}
+
 }
