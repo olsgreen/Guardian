@@ -1,5 +1,5 @@
 {
-    "name": "olsgreen/guardian",
+    "name": "olsgreen/laravel-guardian",
     "description": "A simple base class for self validating models for Laravel 4.x and Eloquent.",
     "authors": [
         {
